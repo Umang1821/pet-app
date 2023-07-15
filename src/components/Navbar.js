@@ -13,6 +13,9 @@ function Navbar() {
         <li className="navbar-item">
           <Link to="/Help" className="navbar-link">Services</Link>
         </li>
+        <li className="navbar-item">
+          <Link to="/" className="navbar-link">Logout</Link>
+        </li>
       </ul>
     </nav>
   );
