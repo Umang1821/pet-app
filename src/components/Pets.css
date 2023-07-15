@@ -1,0 +1,24 @@
+.pet-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pet-image {
+    width: auto;
+    height: 150px;
+    margin-right: 20px;
+    margin-top: 50px;
+ }
+  
+  .pet-image:last-child {
+    margin-right: 0;
+  }
+  
+  .head{
+    font-size: 36px;
+    text-align: center;
+  }
+  .pet-name{
+    text-align: center;
+  }

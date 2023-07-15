@@ -1,0 +1,34 @@
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .service {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .service-image {
+    width: 50%;
+    height: auto;
+  }
+  
+  .service-title {
+    margin-top: 10px;
+  }
+  .Pets-people{
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .para{
+    font-size: 15px;
+    width: 900px;
+  }
+  .ddiv{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }

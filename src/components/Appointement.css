@@ -1,0 +1,50 @@
+.book-appointment-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-appointment-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .book-appointment-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .book-appointment-container .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .book-appointment-container label {
+    font-weight: bold;
+  }
+  
+  .book-appointment-container input[type="text"],
+  .book-appointment-container input[type="email"],
+  .book-appointment-container input[type="date"],
+  .book-appointment-container input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .book-appointment-container button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .book-appointment-container button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

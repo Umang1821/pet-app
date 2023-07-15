@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .error {
+    margin-top: 5px;
+    font-size: 14px;
+    color: red;
+  }
+  
+  .btn-primary2 {
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #000;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary2:hover {
+    background-color: gray;
+  }
+  
+  .btn-primary3 {
+    display: block;
+    padding: 10px;
+    margin-left: 720px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #000;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary3:hover {
+    background-color: gray;
+  }
+  .text-danger {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: red;
+  }
+  
+  .registered-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .registered-section span {
+    font-size: 14px;
+  }
+  
+  .registered-section .btn-primary2 {
+    margin-top: 10px;
+  }
+  
