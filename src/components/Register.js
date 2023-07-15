@@ -4,13 +4,14 @@ import wallpaper from "../assets/wallpaper.avif";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import './Register.css';
+import "./Register.css";
 
 function Register() {
   const navigate = useNavigate();
 
   const [flag, setFlag] = useState(false);
   const [isAlreadyExist, setIsAlreadyExist] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const initialValues = {
     email: "",
@@ -27,8 +28,8 @@ function Register() {
       .string()
       .required("Required!")
       .matches(
-        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-        "Must Contain at least 8 Characters with One Uppercase, One Lowercase, One Numeric, and One Special Character"
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{4,}$/,
+        "Must Contain at least 4 Characters with One Uppercase, One Lowercase, One Numeric, and One Special Character"
       ),
   });
 
@@ -39,18 +40,19 @@ function Register() {
   });
 
   function handleFormSubmit(e) {
-    formik.handleSubmit(e);
-    if (!formik.values.email || !formik.values.password || !formik.values.name) {
-      setFlag(true);
-    } else {
+    e.preventDefault();
+    setFormSubmitted(true);
+  
+    if (formik.isValid) {
       setFlag(false);
       let ob = {
         name: formik.values.name,
         email: formik.values.email,
         password: formik.values.password,
       };
+  
       let olddata = localStorage.getItem("UserData");
-      if (olddata == null) {
+      if (olddata === null) {
         olddata = [];
         olddata.push(ob);
         localStorage.setItem("UserData", JSON.stringify(olddata));
@@ -66,8 +68,11 @@ function Register() {
           navigate("/login");
         }
       }
+    } else {
+      setFlag(true);
     }
   }
+  
 
   return (
     <div>
@@ -94,7 +99,7 @@ function Register() {
               onChange={formik.handleChange}
               value={formik.values.name}
             ></input>
-            {formik.touched.name && formik.errors.name && (
+            {formik.touched.name && formik.errors.name && formSubmitted && (
               <div className="error">{formik.errors.name}</div>
             )}
 
@@ -111,7 +116,7 @@ function Register() {
               onChange={formik.handleChange}
               value={formik.values.email}
             ></input>
-            {formik.touched.email && formik.errors.email && (
+            {formik.touched.email && formik.errors.email && formSubmitted && (
               <div className="error">{formik.errors.email}</div>
             )}
 
@@ -128,9 +133,15 @@ function Register() {
               onChange={formik.handleChange}
               value={formik.values.password}
             ></input>
-            {formik.touched.password && formik.errors.password && (
-              <div className="error">{formik.errors.password}</div>
-            )}
+            <label className="message">
+              Must Contain at least 4 Characters with One Uppercase, One
+              Lowercase, One Numeric, and One Special Character{" "}
+            </label>
+            {formik.touched.password &&
+              formik.errors.password &&
+              formSubmitted && (
+                <div className="error">{formik.errors.password}</div>
+              )}
 
             <div className="text-center">
               <button type="submit" className="btn-primary2">
@@ -140,7 +151,8 @@ function Register() {
 
             {isAlreadyExist && (
               <div className="text-danger">
-                This User already exists in the database. Please continue to Login.
+                This User already exists in the database. Please continue to
+                Login.
               </div>
             )}
           </div>
