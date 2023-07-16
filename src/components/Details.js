@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Details.css";
 import Pet from "../assets/paw.avif";
+import Footer from "./Footer";
 
 function CustomerForm() {
   const navigate = useNavigate();

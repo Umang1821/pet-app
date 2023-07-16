@@ -1,6 +1,7 @@
 import React from "react";
 import "./Help.css";
 import Appointment from "./Appointement";
+import Footer from "./Footer";
 
 const services = [
   { name: "Pet Shower", cost: 20 },
@@ -13,19 +14,21 @@ const services = [
 
 function Services() {
   return (
-    <div className="services-container">
-      <h2 className="services-heading">Services</h2>
-      <div className="services-box">
-        {services.map((service) => (
-          <div className="service-parent">
-            <p className="service-name">{service.name}</p>
-            <p className="service-cost">Rs{service.cost}</p>
-          </div>
-        ))}
+    <div>
+      <div className="services-container">
+        <h2 className="services-heading">Services</h2>
+        <div className="services-box">
+          {services.map((service) => (
+            <div className="service-parent">
+              <p className="service-name">{service.name}</p>
+              <p className="service-cost">Rs{service.cost}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    <Appointment />
+      <Appointment />
+      <Footer />
     </div>
-
   );
 }
 

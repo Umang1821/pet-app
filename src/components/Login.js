@@ -24,13 +24,11 @@ function Login() {
     password: yup.string().required("Password is Required!"),
   });
   const onSubmit = (values) => {};
-  //Using useFormik hook for form validation
   const formik = useFormik({
     initialValues,
     onSubmit,
     validationSchema,
   });
-  //handling the form submit
   function handleFormSubmit(e) {
     formik.handleSubmit(e);
     var arr = JSON.parse(localStorage.getItem("UserData"));
@@ -46,7 +44,6 @@ function Login() {
       let ob = { email: formik.values.email, password: formik.values.password };
       sessionStorage.setItem("userInfo", JSON.stringify(ob));
       setLoggedIn(true);
-      //after authentication user is directed to the User Home page.
       navigate("/UserHome", { state: { email: formik.values.email } });
     } else {
       setIsCorrect(!isCorrect);
@@ -127,7 +124,6 @@ function Login() {
               )}
             </div>
           </form>
-          {/* Registration Page Link */}
           <div>
             <p className="h5 ">Don't have an Account ?</p>
             <Link to="/Register">

@@ -18,8 +18,6 @@ function Dashboard() {
         <Slider />
         <Counter /> 
         <Footer />
-
-
     </div>
   )
   };

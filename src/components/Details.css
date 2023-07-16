@@ -6,7 +6,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   .customer-form h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -20,6 +20,7 @@
   
   .customer-form .form-group {
     margin-bottom: 20px;
+    display: contents;
   }
   
   .customer-form label {

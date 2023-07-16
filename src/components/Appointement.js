@@ -26,9 +26,6 @@ function Appointment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here
-    // ...
-    // Reset the form fields
     setName("");
     setEmail("");
     setSelectedDate("");
@@ -37,55 +34,60 @@ function Appointment() {
   };
 
   return (
-    <div className="book-appointment-container">
-      <h2>Book an Appointment</h2>
-      {isSubmitted ? (
-        <div className="success-message">Appointment booked successfully!</div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={handleNameChange}
-              required
-            />
+    <div className="app-parent">
+      <div><h2 className="appointment-heading">Book a Slot</h2></div>
+      <div className="book-appointment-container">
+        <h2>Choose</h2>
+        {isSubmitted ? (
+          <div className="success-message">
+            Appointment booked successfully!
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={handleEmailChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="date">Date:</label>
-            <input
-              type="date"
-              id="date"
-              value={selectedDate}
-              onChange={handleDateChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="time">Time:</label>
-            <input
-              type="time"
-              id="time"
-              value={selectedTime}
-              onChange={handleTimeChange}
-              required
-            />
-          </div>
-          <button type="submit">Book Appointment</button>
-        </form>
-      )}
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={handleNameChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="date">Date:</label>
+              <input
+                type="date"
+                id="date"
+                value={selectedDate}
+                onChange={handleDateChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="time">Time:</label>
+              <input
+                type="time"
+                id="time"
+                value={selectedTime}
+                onChange={handleTimeChange}
+                required
+              />
+            </div>
+            <button type="submit">Book Appointment</button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

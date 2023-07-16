@@ -134,8 +134,7 @@ function Register() {
               value={formik.values.password}
             ></input>
             <label className="message">
-              Must Contain at least 4 Characters with One Uppercase, One
-              Lowercase, One Numeric, and One Special Character{" "}
+              Eg-"Ab@12(min 4 Characters)"
             </label>
             {formik.touched.password &&
               formik.errors.password &&
