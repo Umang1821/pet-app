@@ -39,18 +39,27 @@ function Register() {
     validationSchema,
   });
 
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    setFormSubmitted(true);
-  
-    if (formik.isValid) {
-      setFlag(false);
+ function handleFormSubmit(e) {
+  e.preventDefault();
+  setFormSubmitted(true);
+
+  if (formik.isValid) {
+    setFlag(false);
+
+    if (
+      formik.values.name.trim() === "" ||
+      formik.values.email.trim() === "" ||
+      formik.values.password.trim() === ""
+    ) {
+      // Check if any of the form fields are empty
+      setFlag(true);
+    } else {
       let ob = {
         name: formik.values.name,
         email: formik.values.email,
         password: formik.values.password,
       };
-  
+
       let olddata = localStorage.getItem("UserData");
       if (olddata === null) {
         olddata = [];
@@ -68,10 +77,11 @@ function Register() {
           navigate("/login");
         }
       }
-    } else {
-      setFlag(true);
     }
+  } else {
+    setFlag(true);
   }
+}
   
 
   return (

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Details.css";
-import Pet from "../assets/paw.avif";
-import Footer from "./Footer";
+import Pet from "../assets/brief.avif";
+import { Link } from "react-router-dom";
 
 function CustomerForm() {
   const navigate = useNavigate();
@@ -87,8 +87,15 @@ function CustomerForm() {
           <button type="submit">Save</button>
         </form>
         {isSubmitted && (
-          <p className="success-message">Form submitted successfully! Redirecting...</p>
+          <p className="success-message">
+            Form submitted successfully! Redirecting...
+          </p>
         )}
+      </div>
+      <div className="home1">
+        <Link to="/UserHome" className="button">
+          Go to Home
+        </Link>
       </div>
     </div>
   );

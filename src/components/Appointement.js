@@ -26,6 +26,21 @@ function Appointment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const currentDateTime = new Date();
+    const selectedDateTime = new Date(
+      `${selectedDate}T${selectedTime}:00`
+    );
+
+    if (
+      selectedDateTime <= currentDateTime ||
+      selectedDateTime.getHours() < 9 ||
+      selectedDateTime.getHours() >= 17
+    ) {
+      alert("Invalid date or time selection. Please choose a valid date and time between 9 am and 5 pm.");
+      return;
+    }
+
     setName("");
     setEmail("");
     setSelectedDate("");
@@ -35,7 +50,9 @@ function Appointment() {
 
   return (
     <div className="app-parent">
-      <div><h2 className="appointment-heading">Book a Slot</h2></div>
+      <div>
+        <h2 className="appointment-heading">Book a Slot</h2>
+      </div>
       <div className="book-appointment-container">
         <h2>Choose</h2>
         {isSubmitted ? (
